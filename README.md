@@ -1,5 +1,7 @@
 # yolov8-yolov11_guide
 
+<img width="844" height="362" alt="image" src="https://github.com/user-attachments/assets/f6acadbb-511e-4337-8d9d-3a710d52cac2" />
+
 
 ````markdown
 # YOLOv8 / YOLOv11 정리 & 비교  
@@ -132,7 +134,48 @@ yolo detect predict model=runs/detect/train/weights/best.pt source='test.jpg'
 * Ultralytics 공식 문서
 * 비교 논문 및 블로그 글 등
 
-# 🚀 YOLOv11 모델 성능 비교 (COCO 기준)
+* #  YOLO 모델 버전별 성능 비교
+
+> YOLO (You Only Look Once) 시리즈의 주요 버전별 특징과 성능 비교표입니다.  
+> 최신 버전일수록 속도 및 정확도 향상, 다양한 기능(분류/세그멘테이션/포즈/OBB 등)을 지원합니다.  
+> 출처: [Ultralytics Docs](https://docs.ultralytics.com/), [YOLO Papers](https://pjreddie.com/darknet/yolo/)
+
+---
+
+## YOLO 버전별 요약 비교
+
+| 버전 | 발표 연도 | 주요 프레임워크 | 특징 요약 | 성능(mAP@50-95, COCO) | 속도(ms, GPU) | 모델 크기 (MB) | 비고 |
+|------|------------|----------------|-------------|----------------------|----------------|----------------|-------|
+| [YOLOv3](https://pjreddie.com/darknet/yolo/) | 2018 | Darknet (C) | 처음으로 다중 스케일 탐지, 안정적 성능 | ~33% | 약 22 ms | 236 | 고전적, 연구용 |
+| [YOLOv4](https://github.com/AlexeyAB/darknet) | 2020 | Darknet / OpenCV | CSPDarknet53, 데이터증강 개선 | ~43% | 약 20 ms | 244 | 커뮤니티 중심 발전 |
+| [YOLOv5](https://github.com/ultralytics/yolov5) | 2020 | PyTorch | Ultralytics에서 개발, 사용 편리성 ↑ | ~50.5% | 약 6.4 ms | 90 | 실용화 시작 |
+| [YOLOv6](https://github.com/meituan/YOLOv6) | 2022 | PyTorch | 산업용 최적화, TensorRT 친화적 | ~51.0% | 약 5.0 ms | 85 | Meituan 발표 |
+| [YOLOv7](https://github.com/WongKinYiu/yolov7) | 2022 | PyTorch | E-ELAN 구조, 속도와 정확도 동시 향상 | ~53.0% | 약 4.0 ms | 75 | SOTA 유지 기간 길음 |
+| [YOLOv8](https://github.com/ultralytics/ultralytics) | 2023 | PyTorch | Anchor-free 구조, 세그멘테이션 지원 | ~52.9% | 약 3.5 ms | 68 | 가장 인기 많음 |
+| [YOLOv9](https://github.com/WongKinYiu/yolov9) | 2024 | PyTorch | GELAN + GIA, 고정밀 구조 | ~54.0% | 약 3.3 ms | 70 | 연구용 초점 |
+| [YOLOv10](https://github.com/THU-MIG/yolov10) | 2024 | PyTorch | NMS-free 구조, 효율 극대화 | ~54.5% | 약 3.0 ms | 65 | THU 연구팀 |
+| [YOLOv11](https://github.com/ultralytics/ultralytics) | 2025 | PyTorch | 구조 최적화, 경량화 + 정확도 향상 | **~54.7%** | **1.5 ms (T4 기준)** | **56.9 MB** | 최신 버전 |
+
+
+
+##  요약
+| 모델 | 정확도 | 속도 | 추천 용도 |
+|------|--------|------|------------|
+| YOLOv5 | ✅ 안정적 | ⚡ 빠름 | 입문자 / 실무 입문 |
+| YOLOv7 | 🔥 정확 | ⚡ 빠름 | 일반적인 탐지 |
+| YOLOv8 | 🌟 최신 기능 | 🚀 빠름 | 세그멘테이션 포함 프로젝트 |
+| YOLOv11 | 💎 최고 정확도 | 💨 가장 빠름 | 최신 연구 / 프로덕션 |
+
+---
+
+##  참고
+- [Ultralytics Docs – YOLOv11](https://docs.ultralytics.com/models/yolo11/)
+- [Ultralytics GitHub](https://github.com/ultralytics/ultralytics)
+- [YOLOv10 Paper (arXiv:2405.14458)](https://arxiv.org/abs/2405.14458)
+- [YOLOv9 Paper (arXiv:2402.13616)](https://arxiv.org/abs/2402.13616)
+
+
+#  YOLOv11 모델 성능 비교 (COCO 기준)
 
 > 참고: 아래 표의 링크를 클릭하면 Ultralytics 공식 모델을 바로 다운로드할 수 있습니다.  
 > 출처: [Ultralytics YOLOv11 Docs](https://docs.ultralytics.com/models/yolo11/)

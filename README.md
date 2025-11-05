@@ -132,3 +132,27 @@ yolo detect predict model=runs/detect/train/weights/best.pt source='test.jpg'
 * Ultralytics 공식 문서
 * 비교 논문 및 블로그 글 등
 
+# 🚀 YOLOv11 모델 성능 비교 (COCO 기준)
+
+> 참고: 아래 표의 링크를 클릭하면 Ultralytics 공식 모델을 바로 다운로드할 수 있습니다.  
+> 출처: [Ultralytics YOLOv11 Docs](https://docs.ultralytics.com/models/yolo11/)
+
+| 모델 | 크기 (픽셀) | mAP<sub>val</sub> 50–95 | 속도 (CPU ONNX, ms) | 속도 (T4 TensorRT10, ms) | 파라미터 (M) | FLOPs (B) | 다운로드 |
+|------|--------------|--------------------------|----------------------|---------------------------|----------------|------------|------------|
+| [YOLO11n](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11n.pt) | 640 | 39.5 | 56.1 ± 0.8 | 1.5 ± 0.0 | 2.6 | 6.5 | [⬇️ Download](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11n.pt) |
+| [YOLO11s](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11s.pt) | 640 | 47.0 | 90.0 ± 1.2 | 2.5 ± 0.0 | 9.4 | 21.5 | [⬇️ Download](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11s.pt) |
+| [YOLO11m](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11m.pt) | 640 | 51.5 | 183.2 ± 2.0 | 4.7 ± 0.1 | 20.1 | 68.0 | [⬇️ Download](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11m.pt) |
+| [YOLO11l](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11l.pt) | 640 | 53.4 | 238.6 ± 1.4 | 6.2 ± 0.1 | 25.3 | 86.9 | [⬇️ Download](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11l.pt) |
+| [YOLO11x](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11x.pt) | 640 | 54.7 | 462.8 ± 6.7 | 11.3 ± 0.2 | 56.9 | 194.9 | [⬇️ Download](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolo11x.pt) |
+
+---
+
+## 사용 예시
+
+YOLOv11 모델을 다운로드한 후 학습 또는 추론할 수 있습니다.
+
+```bash
+# 예시: YOLO11s 모델로 추론 실행
+yolo detect predict model=yolo11s.pt source='image.jpg'
+
+
